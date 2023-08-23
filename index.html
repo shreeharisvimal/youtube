@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="youtube-icon.png" >
+</head>
+<body>
+    <div class="header" >
+            <div class="menu"><i class="fa-solid fa-bars" style="color: rgb(147, 140, 140);"></i></div>
+            <div class="logo"><img src="youtube-logo.jpg"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                </div>
+                <button class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+                <div class="mic"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fffcfc}</style><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"/></svg></div>
+            <div class=upload><svg height="24" style="pointer-events: none; display: block; width: 100%; height: 100%;" viewBox="0 0 24 24" width="24" focusable="false"><path d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"></path></svg></div>
+            <div class="bell"><svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z"></path></svg></div>
+            <div class="profile"><img id="img" draggable="false" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="https://yt3.ggpht.com/5N1QApnysaTa5UUDVw4myD1a3z8BHfJ0bxQ4clNcT5fxw7STrxx4crce83KRoSVreYlwALXy-w=s88-c-k-c0x00ffffff-no-rj"></div>
+        </div>   
+     </div>
+        <div class="head-main">
+            <div class="home-main">
+                <a href="#" class="home">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g><path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path></g></svg>
+                </a>
+                <p class="h-text">Home</p>
+            </div>
+        
+            <div class="home-main">
+                <div class="home">
+                    <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path></svg>
+                </div>
+                <p class="h-text">Shorts</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path></svg>
+                </div>
+                <p class="h-text">Subscriptions</p>
+            </div>
+
+            <hr class="line">
+
+            <div class="home-main">
+                <div class="home">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z"></path></svg>
+                </div>
+                <p class="h-text">Library</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg height="24" style="pointer-events: none; display: block; width: 100%; height: 100%;" viewBox="0 0 24 24" width="24" focusable="false"><g><path d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM22 12c0 5.51-4.49 10-10 10S2 17.51 2 12h1c0 4.96 4.04 9 9 9s9-4.04 9-9-4.04-9-9-9C8.81 3 5.92 4.64 4.28 7.38c-.11.18-.22.37-.31.56L3.94 8H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22 3.86 8.51 2 12 2c5.51 0 10 4.49 10 10z"></path></g></svg>
+                </div>
+                <p class="h-text">History</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="m10 8 6 4-6 4V8zm11-5v18H3V3h18zm-1 1H4v16h16V4z"></path></svg>
+                </div>
+                <p class="h-text">Your videos</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM12 3c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9m0-1c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path></svg>
+                </div>
+                <p class="h-text">Watch later</p>
+            </div>
+            <div class="home-main">
+                <div class="home">
+                    <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M17 18v1H6v-1h11zm-.5-6.6-.7-.7-3.8 3.7V4h-1v10.4l-3.8-3.8-.7.7 5 5 5-4.9z"></path></svg>
+                </div>
+                <p class="h-text">Downloads</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z M7,20H4v-8h3V20z M19.98,13.17l-1.34,6 C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3 c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z"></path></svg>
+                </div>
+                <p class="h-text">Liked videos</p>
+            </div>
+
+            <div class="home-main">
+                <div class="home">
+                    <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="m18 9.28-6.35 6.35-6.37-6.35.72-.71 5.64 5.65 5.65-5.65z"></path></svg>
+                </div>
+                <p class="h-text">Show more</p>
+            </div>
+            <hr class="line">    
+       </div>
+
+    <div class="second-top-bar">
+        <button class="all">All</button>
+        <button class="all">Mixes</button>
+        <button class="all">Music</button>
+        <button class="all">HTML</button>
+        <button class="all">AMVs</button>
+        <button class="all">Gaming</button>
+        <button class="all">Contemporary R&B</button>
+        <button class="all">Watched</button>
+        <button class="all">New to you</button>
+    </div>
+    
+    <div class="video-main-container">    
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-2.webp" class="thumbnail-image">
+                <div class="time">
+                    2:26    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-2.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Tey Dora - džanum (tiktok remix) "moje more"</div>
+                    <p class="channel-name">lenq</p>
+                    <p class="views-year">596K views &bull; 2 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-3.webp" class="thumbnail-image">
+                <div class="time">
+                    0:11    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-3.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Gojo Saturo's Rizz  spell on School teacher | Jujutsu Kaisen Season 2"</div>
+                    <p class="channel-name">Arushi Hashira</p>
+                    <p class="views-year">648 views &bull; 1 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-4.webp" class="thumbnail-image">
+                <div class="time">
+                    9:39    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="youtube-profile-4.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">10 CSS Pro tips - code this, NOT that!"</div>
+                    <p class="channel-name">Fireship</p>
+                    <p class="views-year">1.5M views &bull; 2 years ago</p>          
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-5.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-5.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">(Speedup Unclean)Starboy - The Weekend,draft punk [Edit Audio]</div>
+                    <p class="channel-name">Oshu Edits</p>
+                    <p class="views-year">665 views &bull; 1 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-2 (2).webp" class="thumbnail-image">
+                <div class="time">
+                    0:26    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-6.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">wine pon you [AMV/EDIT] 4K</div>
+                    <p class="channel-name">NOAH EDITZ</p>
+                    <p class="views-year">122K views &bull; 5 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-7.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-7.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">UNFORGETTABLE-JJK EDIT CAPCUT</div>
+                    <p class="channel-name">Konoha Editz 1st</p>
+                    <p class="views-year">120 views &bull; 1 day ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-8.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-8.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">EREN JAEGER - Starboy Edit[AMV</div>
+                    <p class="channel-name">r1sky</p>
+                    <p class="views-year">49k views &bull; 2 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-9.webp " class="thumbnail-image">
+                <div class="time">
+                    0:33   
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-9.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">jailer villains danc #trendingsong #jailer</div>
+                    <p class="channel-name">DRAAP OL DAILY</p>
+                    <p class="views-year">533 views &bull; 4 days ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-10.webp" class="thumbnail-image">
+                <div class="time">
+                    11:39    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-10.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Learn Web Development and actually Get a job</div>
+                    <p class="channel-name">James cross</p>
+                    <p class="views-year">1m views &bull; 4 years ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-11.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-11.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Goj vs Toji| Fill void x After Hours | [AMV|EDIT]</div>
+                    <p class="channel-name">TenzinFx</p>
+                    <p class="views-year">237 views &bull; 2 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-12.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-12.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">The Best of Paganini- Dvevil's Violinist</div>
+                    <p class="channel-name">Classical Masterpieces</p>
+                    <p class="views-year">1.8M views &bull; Streamed 2 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-13.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-13.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">After Hours - Jujtsu Kaisen [EDIT/AMV]| Vihxxn</div>
+                    <p class="channel-name">Vihxxn</p>
+                    <p class="views-year">16k views &bull; 5 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-14.webp" class="thumbnail-image">
+                <div class="time">
+                    18:59    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-14.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Dont'fall behind - High income skills worth learning</div>
+                    <p class="channel-name">Oliur Online</p>
+                    <p class="views-year">336k views &bull; 3 months ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-15.webp" class="thumbnail-image">
+                <div class="time">
+                    55:40   
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-15.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Full Stack Development with java Spring Boot, React, and MongoDB-..</div>
+                    <p class="channel-name">freeCodeCamp.org</p>
+                    <p class="views-year">479k views &bull; 7 months ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-16.webp" class="thumbnail-image">
+                <div class="time">
+                    6:53    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-16.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">world's shortest UI/UX design course</div>
+                    <p class="channel-name">Juxtopposed</p>
+                    <p class="views-year">308k views &bull; 1 months ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-17.webp" class="thumbnail-image">
+                <div class="time">
+                    44:36    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-17.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Part 1| Introduction to Python | Python Malayalam Tutorial For Beginners..</div>
+                    <p class="channel-name">Brototype Malayalam</p>
+                    <p class="views-year">593k views &bull; 3 years ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-18.webp" class="thumbnail-image">
+                <div class="time">
+                    17:02   
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-18.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">How He Got a $100K Remote job wiithout going To college</div>
+                    <p class="channel-name">Sanskar Goyal</p>
+                    <p class="views-year">235k views &bull; 3 weeks ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-19.webp" class="thumbnail-image">
+                <div class="time">
+                    18:0    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-19.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Figma Tutorial :3D carsousel Slider(+free files)</div>
+                    <p class="channel-name">UI Adrian</p>
+                    <p class="views-year">115k views &bull; 4 months ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-20.webp" class="thumbnail-image">
+                <div class="time">
+                    0:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-20.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">Under the influence X | was never there-(slowed + reverb)</div>
+                    <p class="channel-name">White</p>
+                    <p class="views-year">1M views &bull; 4 months ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-21.webp" class="thumbnail-image">
+                <div class="time">
+                    8:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-21.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">The Right Way to Learn Coding</div>
+                    <p class="channel-name">Brototype MAlayalam</p>
+                    <p class="views-year">11k views &bull; 4 days ago</p>          
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-video">      
+            <div class="thumbnail-pic">
+                <img src="thumbnail-22.webp" class="thumbnail-image">
+                <div class="time">
+                    2:46    
+                </div>  
+            </div>
+            <div class="video-details">
+                <div class="thumbnail-icon">
+                    <img src="profile-21.jpg">
+                </div>
+                <div class="main-content">
+                    <div class="thumbnail">INtroduction to prgramming </div>
+                    <p class="channel-name">Brototype MAlayalam</p>
+                    <p class="views-year">154k views &bull; 3 months ago</p>          
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>  
+    </div>  
+</body>
+</html>
